@@ -1,28 +1,27 @@
-import { FaTimes,FaEdit } from 'react-icons/fa'
-import {useContext} from 'react'
-import Card from './shared/Card'
-import SurveyContext from '../Context/SurveyContext'
+import { FaTimes, FaEdit } from 'react-icons/fa';
+import Card from './shared/Card';
 
-function SurveyItem({ item }) {		
-	const {deleteSurvey, editSurvey} = useContext(SurveyContext)
+function SurveyItem({ item, deleteSurvey, editSurvey }) {
+  const isAdmin = false; // Set to true if YOU (admin) want to see edit/delete
 
-
-		return (
-	<Card>
-		<div className='num-display'>{item.rating}</div>
-		<button onClick={() => deleteSurvey(item.id)}
-			className="close">
-			<FaTimes color='purple' />
-		</button>
-		<button onClick={() => editSurvey(item)} 
-			className='edit'>
-			<FaEdit color='red' />
-		</button>
-		<div className='text-display'>{item.text}</div>	
-	</Card>
-	
-	)
+  return (
+    <Card>
+      <div className="survey-item">
+        {isAdmin && (
+          <>
+            <button onClick={() => deleteSurvey(item.id)} className="close" aria-label="Delete">
+              <FaTimes />
+            </button>
+            <button onClick={() => editSurvey(item)} className="edit" aria-label="Edit">
+              <FaEdit />
+            </button>
+          </>
+        )}
+        <div className="survey-text">{item.text}</div>
+        <div className="survey-rating">Rating: {item.rating}</div>
+      </div>
+    </Card>
+  );
 }
 
-
-export default SurveyItem
+export default SurveyItem;
