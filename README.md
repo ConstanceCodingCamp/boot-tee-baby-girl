@@ -26,7 +26,8 @@ Floating footer links for Home and About
 
 How to run locally:
 
-Clone the repo:git clone https://github.com/ConstanceCodingCamp/boot-tee-baby-girl.git
+Clone the repo:git clone https://github.com/ConstanceCodingCamp/boot-tee-baby-girl.git 
+
 cd your-repo
 
 Install dependencies:
