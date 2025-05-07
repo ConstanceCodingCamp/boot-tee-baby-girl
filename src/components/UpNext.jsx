@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import Card from './shared/Card';
-import Footer from './shared/Footer'; // ✅ import Footer
+import Footer from './shared/Footer'; 
 
 function UpNext() {
   const location = useLocation();
@@ -33,7 +33,7 @@ function UpNext() {
         </div>
       </Card>
 
-      <Footer /> {/* ✅ single footer navigation */}
+      <Footer /> 
     </>
   );
 }
